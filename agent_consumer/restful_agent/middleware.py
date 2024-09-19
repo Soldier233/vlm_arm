@@ -10,8 +10,6 @@ class HeaderCheckMiddleware:
         self.config = apps.get_app_config('restful_agent').config
 
     def __call__(self, request):
-        # 你可以在这里使用 self.config
-        print("Current config:", self.config)
 
         auth_code = request.headers.get('Authorization')
         if auth_code != self.config.get('secret'):
