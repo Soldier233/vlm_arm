@@ -1,7 +1,10 @@
 from django.urls import path
 
-from . import views
+from .views import Heartbeat
+from .views import ExecuteCommand
 
 urlpatterns = [
-    path("", views.index, name="index"),
+
+    path('heartbeat/', Heartbeat.as_view(), name='heartbeat'),
+    path('execute/', ExecuteCommand.as_view(), name='execute'),
 ]
